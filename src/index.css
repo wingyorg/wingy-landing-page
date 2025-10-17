@@ -1,5 +1,8 @@
 @import "tailwindcss";
 
+/* Font faces - using Google Fonts API with proper font-display */
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
 /* helper to apply Poppins to specific elements */
 .font-poppins {
 	font-family: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto,
