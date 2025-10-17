@@ -1,3 +1,4 @@
+import PhoneIllustration from "../assets/phone-illustration.png";
 export default function InstallApp() {
   return (
     <section className="py-20 bg-gradient-to-br from-orange-50 to-amber-50">
@@ -45,7 +46,7 @@ export default function InstallApp() {
                 <div className=" p-2 ">
                   <div className="w-72 h-[480px] overflow-hidden rounded-[47% 53% 53% 47% / 65% 46% 54% 35%]">
                     <img
-                      src="/src/assets/phone-illustration.png"
+                      src={PhoneIllustration}
                       alt="Illustration"
                       className="w-full h-full object-cover transition-transform duration-300 ease-out hover:scale-105"
                       style={{ objectPosition: 'center 35%', filter: 'contrast(0.98) saturate(0.95)' }}
