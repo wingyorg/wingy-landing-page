@@ -28,6 +28,20 @@ export default function Hero() {
 	const sendEmail = (e: React.FormEvent) => {
 		e.preventDefault();
 		if (!form.current) return;
+
+		// client-side validation
+		const newErrors: { name?: string; email?: string } = {};
+		if (!restaurantName.trim()) newErrors.name = "Please enter the restaurant name.";
+		const emailVal = email.trim();
+		if (!emailVal) newErrors.email = "Please enter an email address.";
+		else {
+			const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+			if (!emailRe.test(emailVal)) newErrors.email = "Please enter a valid email address.";
+		}
+		if (Object.keys(newErrors).length > 0) {
+			setErrors(newErrors);
+			return;
+		}
 		const serviceId = import.meta.env?.VITE_EMAILJS_SERVICE_ID || "service_fqm8u6d";
 		const templateId = import.meta.env?.VITE_EMAILJS_TEMPLATE_ID || "template_12j8q3v";
 		const publicKey = import.meta.env?.VITE_EMAILJS_PUBLIC_KEY || "3ttU6qoXYGd9jJp0X";
@@ -246,14 +260,14 @@ export default function Hero() {
 						<form ref={form} onSubmit={sendEmail} className="space-y-3">
 							<label className="block mb-3">
 								<span className="text-sm font-medium text-gray-700 inline-flex items-center gap-2"><User size={16} className="text-gray-700" /> Restaurant name</span>
-								<input type="text" value={restaurantName} name="name" onChange={e => setRestaurantName(e.target.value)} className="mt-1 block w-full rounded-md border border-[#fb923c] shadow-sm placeholder:text-sm px-2" placeholder="e.g. La Bonne Table" />
-								{errors.name ? <p className="text-xs text-red-600 mt-1">{errors.name}</p> : null}
+								<input id="demo-name" type="text" value={restaurantName} name="name" onChange={e => { setRestaurantName(e.target.value); if (errors.name) setErrors(prev => ({ ...prev, name: undefined })); }} className="mt-1 block w-full rounded-md border border-[#fb923c] shadow-sm placeholder:text-sm px-2" placeholder="e.g. La Bonne Table" aria-invalid={!!errors.name} aria-describedby={errors.name ? 'demo-name-error' : undefined} />
+								{errors.name ? <p id="demo-name-error" className="text-xs text-red-600 mt-1">{errors.name}</p> : null}
 							</label>
 
 							<label className="block mb-4">
 								<span className="text-sm font-medium text-gray-700 inline-flex items-center gap-2"><Mail size={16} className="text-gray-700" /> Email</span>
-								<input type="email" value={email} name="email" onChange={e => setEmail(e.target.value)} className="mt-1 block w-full rounded-md border border-[#fb923c] placeholder:text-sm px-2" placeholder="name@restaurant.com" />
-								{errors.email ? <p className="text-xs text-red-600 mt-1">{errors.email}</p> : null}
+								<input id="demo-email" type="email" value={email} name="email" onChange={e => { setEmail(e.target.value); if (errors.email) setErrors(prev => ({ ...prev, email: undefined })); }} className="mt-1 block w-full rounded-md border border-[#fb923c] placeholder:text-sm px-2" placeholder="name@restaurant.com" aria-invalid={!!errors.email} aria-describedby={errors.email ? 'demo-email-error' : undefined} />
+								{errors.email ? <p id="demo-email-error" className="text-xs text-red-600 mt-1">{errors.email}</p> : null}
 							</label>
 
 							<div className="flex items-center justify-end gap-3">
