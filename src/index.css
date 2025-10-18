@@ -1,5 +1,48 @@
-/* Font faces - using Google Fonts API with proper font-display */
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700;800&display=swap');
+/*
+Self-hosted font setup
+
+Place Quicksand WOFF2 files in `src/assets/fonts/` with these filenames:
+	- Quicksand-Regular.woff2   (400)
+	- Quicksand-Medium.woff2    (500)
+	- Quicksand-SemiBold.woff2  (600)
+	- Quicksand-Bold.woff2      (700)
+
+Then the @font-face rules below will load them. Using WOFF2 is recommended for best compression.
+*/
+
+@font-face {
+	font-family: 'Quicksand';
+	font-style: normal;
+	font-weight: 400;
+	font-display: swap;
+	src: url('/src/assets/fonts/Quicksand-Regular.woff2') format('woff2');
+}
+@font-face {
+	font-family: 'Quicksand';
+	font-style: normal;
+	font-weight: 500;
+	font-display: swap;
+	src: url('/src/assets/fonts/Quicksand-Medium.woff2') format('woff2');
+}
+@font-face {
+	font-family: 'Quicksand';
+	font-style: normal;
+	font-weight: 600;
+	font-display: swap;
+	src: url('/src/assets/fonts/Quicksand-SemiBold.woff2') format('woff2');
+}
+@font-face {
+	font-family: 'Quicksand';
+	font-style: normal;
+	font-weight: 700;
+	font-display: swap;
+	src: url('/src/assets/fonts/Quicksand-Bold.woff2') format('woff2');
+}
+
+/* Apply the self-hosted Quicksand as the global sans font */
+html, body, #root {
+    font-family: 'Quicksand', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
 
 @import "tailwindcss";
 

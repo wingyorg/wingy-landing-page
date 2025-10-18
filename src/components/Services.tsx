@@ -36,12 +36,12 @@ export default function Services() {
           </span>
         </div>
 
-        <div className="flex justify-center gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 justify-center">
           {features.map((feature, idx) => {
             const imgs = [ServiceQualityImg, ServicePriceImg, ServiceDeliveryImg];
             const Ill = imgs[idx];
             return (
-              <div key={feature.title} className="relative card-wrapper" style={{ width: '300px' }}>
+              <div key={feature.title} className="relative card-wrapper mx-auto w-full max-w-sm">
                 {/* orange offset background */}
                 <div
                   className="absolute inset-0 rounded-2xl card-offset"
@@ -51,17 +51,17 @@ export default function Services() {
 
                 {/* white front card */}
                 <div
-                  className="relative text-center p-8 rounded-2xl transition-all will-change-transform card-inner"
+                  className="relative text-center p-6 sm:p-8 rounded-2xl transition-transform transform hover:-translate-y-1 will-change-transform card-inner"
                   style={{ backgroundColor: '#fff', boxShadow: '0 6px 18px rgba(0,0,0,0.08)', zIndex: 10, border: '1.5px solid #fb923c' }}
                 >
                   <div className="flex justify-center mb-6">
-                    <div className="w-48 h-48 rounded-full flex items-center justify-center">
+                    <div className="w-40 h-40 sm:w-48 sm:h-48 rounded-full flex items-center justify-center overflow-hidden">
                       {Ill ? (
-                        <img src={Ill} alt={feature.title} className="w-48 h-48 object-contain card-img" />
+                        <img src={Ill} alt={feature.title} className="w-32 h-32 sm:w-48 sm:h-48 object-contain card-img" />
                       ) : null}
                     </div>
                   </div>
-                  <h3 className="text-xl font-bold mb-4" style={{ color: '#334155' }}>
+                  <h3 className="text-lg sm:text-xl font-bold mb-3" style={{ color: '#334155' }}>
                     {feature.title}
                   </h3>
                   <p className="text-sm leading-relaxed font-semibold" style={{ color: '#64748b' }}>

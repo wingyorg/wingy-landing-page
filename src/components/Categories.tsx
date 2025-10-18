@@ -51,13 +51,13 @@ export default function Categories() {
                       const t = e.currentTarget as HTMLElement;
                       t.style.backgroundColor = category.color;
                       t.style.color = '#ffffff';
-                      t.style.transform = 'translateX(-50%) scale(1.04)';
+                      //t.style.transform = 'translateX(-50%) scale(1.04)';
                     }}
                     onMouseLeave={(e) => {
                       const t = e.currentTarget as HTMLElement;
                       t.style.backgroundColor = 'transparent';
                       t.style.color = category.color;
-                      t.style.transform = 'translateX(-50%) scale(1)';
+                     // t.style.transform = 'translateX(-50%) scale(1)';//
                     }}
                   >
                     {category.name}
