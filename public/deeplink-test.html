@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Wingy Deep Link Test</title>
+		<style>
+			body {
+				font-family: Arial, sans-serif;
+				max-width: 600px;
+				margin: 50px auto;
+				padding: 20px;
+			}
+			h1 {
+				color: #333;
+			}
+			.link-section {
+				margin: 30px 0;
+				padding: 20px;
+				background: #f5f5f5;
+				border-radius: 8px;
+			}
+			a {
+				display: block;
+				padding: 15px;
+				margin: 10px 0;
+				background: #007bff;
+				color: white;
+				text-decoration: none;
+				border-radius: 5px;
+				text-align: center;
+				font-size: 16px;
+			}
+			a:hover {
+				background: #0056b3;
+			}
+			.scheme-custom {
+				background: #28a745;
+			}
+			.scheme-custom:hover {
+				background: #218838;
+			}
+			code {
+				background: #e9ecef;
+				padding: 2px 6px;
+				border-radius: 3px;
+				font-size: 14px;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>🍗 Wingy Deep Link Tester</h1>
+
+		<div class="link-section">
+			<h2>Custom Scheme (wingy://)</h2>
+			<p>These should open the Wingy app directly</p>
+
+			<a href="wingy://" class="scheme-custom">Open App Home</a>
+			<a href="wingy://shop/123" class="scheme-custom">Open Shop #123</a>
+			<a href="wingy://product/456" class="scheme-custom">Open Product #456</a>
+			<a href="wingy://basket" class="scheme-custom">Open Basket</a>
+			<a href="wingy://order-details/789" class="scheme-custom">Open Order #789</a>
+			<a href="wingy://(profile)" class="scheme-custom">Open Profile</a>
+		</div>
+
+		<div class="link-section">
+			<h2>Universal Links (HTTPS)</h2>
+			<p>These should open the app if properly configured</p>
+
+			<a href="https://wingy.ma/">Open App via wingy.ma</a>
+			<a href="https://www.wingy.ma/">Open App via www.wingy.ma</a>
+			<a href="https://customer.wingy.ma/">Open App via customer.wingy.ma</a>
+			<a href="https://wingy.ma/shop/123">Open Shop via HTTPS</a>
+			<a href="https://www.wingy.ma/product/456">Open Product via HTTPS</a>
+		</div>
+
+		<div class="link-section">
+			<h2>📱 How to Use:</h2>
+			<ol>
+				<li>Host this file on a server or send it via email/messaging app</li>
+				<li>Open it on your physical device</li>
+				<li>Tap the links to test deep linking</li>
+				<li>
+					For SMS testing, copy the link text (e.g., <code>wingy://shop/123</code>)
+					and send it
+				</li>
+			</ol>
+
+			<h3>Quick Test Methods:</h3>
+			<ul>
+				<li>
+					<strong>Email yourself</strong> this HTML file and open it on your phone
+				</li>
+				<li>
+					<strong>Start a local server</strong> and access from your phone's browser
+				</li>
+				<li><strong>Upload to GitHub Pages</strong> or any web hosting</li>
+				<li>
+					<strong>Send links via SMS/WhatsApp:</strong> Copy link text and send to
+					yourself
+				</li>
+			</ul>
+		</div>
+	</body>
+</html>
