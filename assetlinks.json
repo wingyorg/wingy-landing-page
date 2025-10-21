@@ -3,9 +3,9 @@
 		"relation": ["delegate_permission/common.handle_all_urls"],
 		"target": {
 			"namespace": "android_app",
-			"package_name": "ma.wingy.customer",
+			"package_name": "com.food.wingy",
 			"sha256_cert_fingerprints": [
-				"D6:3F:84:BB:17:4F:26:94:5A:CD:AD:B8:25:C5:B5:35:03:58:68:E3:3D:1F:D5:1E:C9:E7:BE:C7:3D:9B:3C:F5"
+				"5F:4B:9E:8C:8A:1D:A7:9B:4F:F4:35:9F:F5:47:8F:4B:B1:86:76:7B:89:80:02:8E:87:E1:90:8C:DC:84:5E:9D"
 			]
 		}
 	}
